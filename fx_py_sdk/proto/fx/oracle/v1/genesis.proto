@@ -1,0 +1,56 @@
+syntax = "proto3";
+package fx.oracle.v1;
+
+// this line is used by starport scaffolding # genesis/proto/import
+import "fx/oracle/v1/post.proto";
+option go_package = "github.com/functionx/fx-dex/x/oracle/types";
+import "gogoproto/gogo.proto";
+// GenesisState defines the oracle module's genesis state.
+message GenesisState {
+    repeated Market markets = 1 [(gogoproto.nullable) = false];
+    PostedPrices postedPrices = 2 [(gogoproto.nullable) = false];
+    BandOracle bandOracle = 3 [(gogoproto.nullable) = false];
+    repeated Aggregator aggrators = 4 [(gogoproto.nullable) = false];
+    CurrentPrices prices = 5 [(gogoproto.nullable) = false];
+    uint64 oracleRequestId = 6;
+}
+
+message Params {
+}
+
+message BandOracle {
+    string request_key = 1;
+    int64 oracle_script_id = 2;
+    uint64 multiplier = 3;
+    string ibc_version = 4;
+    string channel = 5;
+    string port = 6;
+    uint64 ask_count = 7;
+    uint64 min_count = 8;
+}
+
+message Answer {
+    string oracle = 1;
+    string answer = 2 [
+        (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+        (gogoproto.nullable) = false
+    ];
+}
+
+message Aggregator {
+    string symbol = 1;
+    OracleConfig config = 2 [
+        (gogoproto.nullable) = false
+    ];
+    int64 round_start_time = 3;
+    repeated Answer submissions = 4 [
+        (gogoproto.nullable) = false
+    ];
+    string type = 5 [(gogoproto.nullable) = true];
+}
+
+message OracleConfig {
+    repeated string oracles = 1;
+    uint32 min_answer_threshold = 2;
+    int64 staleness_threshold = 3;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.common.response";
+option java_outer_classname = "CommonIntResponseProto";
+message CommonIntResponse {
+	int32 data = 1;
+}

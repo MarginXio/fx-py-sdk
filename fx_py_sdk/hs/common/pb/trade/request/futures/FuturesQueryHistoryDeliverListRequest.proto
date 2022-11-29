@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request.futures";
+option java_outer_classname = "FuturesQueryHistoryDeliverListRequestProto";
+message FuturesQueryHistoryDeliverListRequest {
+	int32 pageNo = 1; // 默认1
+	int32 pageSize = 2; // 默认20
+	string startDate = 3; // yyyyMMdd
+	string endDate = 4;	 // yyyyMMdd
+}

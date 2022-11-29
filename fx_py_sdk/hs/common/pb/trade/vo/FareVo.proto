@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.vo";
+option java_outer_classname = "FareVoProto";
+message FareVo {
+    string fare0 = 1; //港股:佣金、美股:佣金
+    string fare1 = 2; //港股:印花税、美股:证监会费
+    string fare2 = 3; //港股:交易费、美股:交易活动费
+    string fare3 = 4; //港股:交易征费、美股:交易征费
+    string fare4 = 5; //港股:待用、美股:待用
+    string fare5 = 6; //港股:待用、美股:待用
+    string fare6 = 7; //港股:平台使用费、美股:平台使用费
+    string fare7 = 8; //港股:待用、美股:待用
+    string farex = 9; //港股:结算费、美股:交收费
+    string faret = 10; //港股:总成交费用、美股:总成交费用
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request";
+option java_outer_classname = "TradeQueryBeforeAndAfterSupportRequestProto";
+message TradeQueryBeforeAndAfterSupportRequest {
+	string stockCode = 1;
+	string exchangeType = 2;
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.vo.futures";
+option java_outer_classname = "FuturesFundInfoVoProto";
+message FuturesFundInfoVo {
+	string assetBalance = 1; // 资产净值
+	string enableBalance = 2; //可用金额(购买力)
+	string marginCall = 3; //追缴保证金
+	string incomeBalance = 4; //持仓盈亏
+	string cashBal = 5; // 现金结余
+	string iMargin = 6; // 基本保证金
+	string mMargin = 7; // 维持保证金
+	string marginLevel = 8; // 保证金水平
+	string maxMargin = 9; // 最高保证金
+	string creditLimit = 10; // 信贷限额
+	string ctrlLevel = 11; // 控制级数
+	string marginClass = 12; // 保证金类型
+	string aeId = 13; // 经纪
+	string cashBalHKD = 14; 	// 港币现金结余
+	string cashBalUSD = 15;		// 美元现金结余
+    string cycRateUSDtoHSD = 16; // 美元兑港币汇率
+	string marginStatus=17; //风险状态  //1:安全 2:预警 3：危险 4：平仓
+	string statusPercent=18;//风险状态画图百分比
+	string closeProfit=19;//已实现盈亏
+	string cashBalCNH=20;//人民币现金结余
+}

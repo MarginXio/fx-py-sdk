@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request.futures";
+option java_outer_classname = "FuturesQueryMaxBuySellAmountRequestProto";
+message FuturesQueryMaxBuySellAmountRequest {
+	string stockCode = 1; // 股票代码
+}

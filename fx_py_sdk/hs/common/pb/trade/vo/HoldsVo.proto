@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.vo";
+option java_outer_classname = "HoldsVoProto";
+message HoldsVo {
+	string stockName = 1; //股票名称
+	string enableAmount = 2; //可卖数量
+	string currentAmount = 3; //持仓
+	string stockCode = 4; //股票代码
+	string lastPrice = 5; //最新价
+	string incomeBalance = 6; //浮动盈亏
+	string costPrice = 7; //成本价
+	string marketValue = 8; //股票市值
+	string marketValueRate = 9; //盈亏比例
+	string incomeRatio = 10; //市值占比
+	string dayCostPrice = 11; //当日成本价
+	string dayInComeAmount = 12; //当日有效入金
+	string dayOutComeAmount = 13; //当日有效出金
+	string keepCostPrice = 14; //保本价
+	string exchangeType=15; //交易市场类型
+}

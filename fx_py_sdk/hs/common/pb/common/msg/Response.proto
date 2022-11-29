@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "common/constant/ResponseMsgType.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.common.msg";
+option java_outer_classname = "ResponseProto";
+message PBResponse {
+	ResponseMsgType responseMsgType = 1;
+	string requestId = 2;
+	int64  responseTime = 3;
+	string  responseCode = 4;
+	string responseMsg = 5;
+	google.protobuf.Any payload = 6;
+}

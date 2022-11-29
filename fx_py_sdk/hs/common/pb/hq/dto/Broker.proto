@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.hq.common.dto";
+option java_outer_classname = "BrokerProto";
+message Broker {
+    int32 level = 1; // 档位
+    string item = 2; // 经纪商代码
+    int32 type = 3; // 0买，1卖
+    string name = 4; // 经济商名称
+}

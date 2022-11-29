@@ -1,0 +1,25 @@
+syntax = "proto3";
+import "hq/dto/Security.proto";
+import "hq/dto/FutureBasicQotExData.proto";
+import "hq/dto/OptionBasicQotExData.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.hq.common.dto";
+option java_outer_classname = "BasicQotProto";
+message BasicQot {
+	 Security security = 1;
+     bool isSuspended = 2; //是否停牌
+     double openPrice = 3; // 开盘价
+     double highPrice = 4; //最高价
+     double lowPrice = 5; //最低价
+     double lastPrice = 6; //最新价
+     double lastClosePrice = 7; //昨收价
+     double priceSpread = 8; //价差
+     int64 volume = 9; //成交量
+     double turnover = 10; //成交额
+     double turnoverRate = 11; //换手率
+     double amplitude = 12; //振幅
+     int32 secStatus = 13; //SecurityStatus, 股票状态
+     string listTime = 14; //上市日期字符串 yyyyMMdd
+     int32 lotSize = 17; //每手
+     FutureBasicQotExData futureExData = 15; //期货特有字段
+     OptionBasicQotExData optionExData = 16; //期权特有字段
+}

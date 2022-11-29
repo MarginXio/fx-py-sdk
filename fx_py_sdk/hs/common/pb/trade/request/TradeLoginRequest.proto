@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request";
+option java_outer_classname = "TradeLoginRequestProto";
+message TradeLoginRequest {
+	string password = 1;			//交易密码，MD5加密
+	string authType = 2;			//登录校验类型，'0'设备校验、'1'手机号校验
+	string authParam = 3;			//登录校验参数，设备校验则传设备号，手机校验传验证码验证接口返回的token
+}

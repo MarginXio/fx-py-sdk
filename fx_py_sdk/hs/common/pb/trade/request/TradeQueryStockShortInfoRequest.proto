@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request";
+option java_outer_classname = "TradeQueryStockShortInfoRequestProto";
+message TradeQueryStockShortInfoRequest {
+    string exchangeType = 1; // 'K'港股、'P'美股、'v'深股通、't'沪股通
+	string stockCode = 2; // 证券代码
+}

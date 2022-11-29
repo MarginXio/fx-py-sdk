@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "common/constant/NotifyMsgType.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.common.msg";
+option java_outer_classname = "NotifyProto";
+message PBNotify {
+	NotifyMsgType notifyMsgType = 1;
+	string notifyId = 2;
+	uint64 notifyTime = 3;
+	google.protobuf.Any payload = 4;
+}
+ 

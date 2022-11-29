@@ -1,0 +1,54 @@
+IBC_CHANNELS:
+  AAPL_FXCore: "channel-0"
+  FXCore_AAPL: "channel-82"
+
+  BTC_FXCore: "channel-0"
+  FXCore_BTC: "channel-83"
+
+  FX_FXCore: "channel-0"
+  FXCore_FX: "channel-84"
+
+  TSLA_FXCore: "channel-0"
+  FXCore_TSLA: "channel-85"
+
+  APE_FXCore_MAINNET: "channel-0"
+  FXCore_APE_MAINNET: "channel-3"
+
+  BTC_FXCore_MAINNET: "channel-0"
+  FXCore_BTC_MAINNET: "channel-4"
+
+  ETH_FXCore_MAINNET: "channel-0"
+  FXCore_ETH_MAINNET: "channel-5"
+
+  FX_FXCore_MAINNET: "channel-0"
+  FXCore_FX_MAINNET: "channel-6"
+
+
+GRPC:
+  TSLA: "https://testnet-tsla-grpc.marginx.io:9090"
+  AAPL: "https://testnet-aapl-grpc.marginx.io:9090"
+  BTC:  "https://testnet-btc-grpc.marginx.io:9090"
+  FX:   "https://testnet-fx-grpc.marginx.io:9090"
+  FXCORE: "https://testnet-fx-grpc.functionx.io:9090"
+
+RPC:
+  TSLA: "https://testnet-tsla-json.marginx.io:26657"
+  AAPL: "https://testnet-aapl-json.marginx.io:26657"
+  BTC:  "https://testnet-btc-json.marginx.io:26657"
+  FX:   "https://testnet-fx-json.marginx.io:26657"
+  FXCORE: "https://testnet-fx-json.functionx.io:26657"
+
+
+GRPC_MAINNET:
+  APE: "https://ape-grpc.marginx.io:443"
+  BTC: "https://btc-grpc.marginx.io:443"
+  ETH: "https://eth-grpc.marginx.io:443"
+  FX:  "https://fx-grpc.marginx.io:443"
+  FXCORE: "https://fx-grpc.functionx.io:443"
+
+RPC_MAINNET:
+  APE: "https://ape-json.marginx.io:443"
+  BTC: "https://btc-json.marginx.io:443"
+  ETH:  "https://eth-json.marginx.io:443"
+  FX:   "https://fx-json.marginx.io:443"
+  FXCORE: "https://fx-json.functionx.io:443"

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "trade/vo/futures/FuturesFundInfoVo.proto";
+import "trade/vo/futures/FuturesHoldsVo.proto";
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.response.futures";
+option java_outer_classname = "FuturesQueryHoldsListResponseProto";
+message FuturesQueryHoldsListResponse {
+	FuturesFundInfoVo fundInfo = 1;
+	repeated FuturesHoldsVo holdsList = 2;
+}

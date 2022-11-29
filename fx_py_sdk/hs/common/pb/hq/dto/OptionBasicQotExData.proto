@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.hq.common.dto";
+option java_outer_classname = "OptionBasicQotExDataProto";
+message OptionBasicQotExData {
+
+  string strikePrice = 1; //行权价
+
+  string openInterest = 2;//未平仓数
+
+  string expireDate =3;//到期日 yyyyMMdd
+
+  string premium  =4;//溢价
+
+  string intrinsicValue =5;//内在价值
+
+  string dueDate =6; //距离到期日
+
+  string iv =7;//隐含波动率
+
+  string timeValue =8;//时间价值
+
+  string actualLeverage =9;//实际杠杆
+
+  string delta =10;//DELTA
+
+  string gamma =11;//GAMMA
+
+  string vega =12;//VEGA
+
+  string theta =13;//THETA
+
+  string rho =14;//RHO
+}

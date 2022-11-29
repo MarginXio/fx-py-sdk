@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "hq/dto/Security.proto";
+import "hq/dto/Ticker.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.hq.response";
+option java_outer_classname = "TickerResponseProto";
+message TickerResponse {
+    Security security = 1; //股票定义
+    repeated Ticker ticker=2; // 逐笔列表
+}

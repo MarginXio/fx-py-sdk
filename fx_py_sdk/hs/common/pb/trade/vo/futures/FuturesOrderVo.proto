@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.vo.futures";
+option java_outer_classname = "FuturesOrderVoProto";
+message FuturesOrderVo {
+	string stockCode = 1;//股票代码，1.港股有后缀 .HK
+	string stockName = 2;//股票名称
+	string businessPrice = 3; // 成交价格
+	string entrustBs = 4;// 委托方向 1:买入,2:卖出
+	string entrustPrice = 5;// 委托价格
+	string entrustAmount = 7;//委托数量
+	string businessAmount = 8;//成交数量
+	string date = 9; //如果是成交接口，成交日期，如果是委托接口， 委托日期
+	string businessTime = 10;//成交时间
+	string entrustTime = 11;//委托时间
+	string queryParamStr = 12;//当前记录的索引,用于分页
+	string statusDesc = 13;	 //委托状态中文描述
+	string status = 14; //委托状态（华盛com.huasheng.stock.common.trade.type.EntrustStatus）
+	string entrustId = 15;//委托编号
+	int32 canBeCanceled = 17;//可撤单  1 可撤单， 0 不可撤单
+	string entrustType = 18;//委托类型
+	string entrustTypeNum = 20;//委托类型对应的数字
+	int32 isValid = 21; // 0 无效 1 有效
+	int32 canBeUpdated = 24; // 是否可改单 1 可改单，0 不可改单
+	string validType = 22; // 有效期类型 0当天有效，1成交并取消，2成交或取消，3直到有效期，4直到自定时间
+	string validTypeDesc = 23; // validType的相关描述，4直到自定时间 直接返回时间yyyy/MM/dd
+	int32 orderOptions = 25; //   0=默认,1=T+1
+	string validTime = 26; // 有效期时间，yyyy/MM/dd
+}
+
+

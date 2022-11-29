@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request.futures";
+option java_outer_classname = "FuturesCancelEntrustRequestProto";
+message FuturesCancelEntrustRequest {
+	string entrustId = 1;
+	string stockCode = 2;
+}

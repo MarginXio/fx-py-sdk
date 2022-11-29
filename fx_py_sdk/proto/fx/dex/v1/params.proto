@@ -1,0 +1,45 @@
+syntax = "proto3";
+package fx.dex.v1;
+
+import "gogoproto/gogo.proto";
+import "cosmos/base/v1beta1/coin.proto";
+option go_package = "github.com/marginxio/marginx/x/dex/types";
+
+message Params {
+  string fee_rate = 1 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  int64 force_liquidation_margin_rate_threshold = 2;
+  int64 order_expire_blocks = 3;
+  int64 max_deals_per_block = 4;
+  int64 max_orders_per_account = 5;
+  int64 permitted_max_leverage = 6;
+  string lock_coin_factor = 7 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}
+
+message Reserve {
+  repeated cosmos.base.v1beta1.Coin accumulative_fee = 1 [
+    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins",
+    (gogoproto.nullable) = false
+  ];
+  string risk_reserve = 2 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  repeated cosmos.base.v1beta1.Coin locked_funds = 3 [
+    (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins",
+    (gogoproto.nullable) = false
+  ];
+  string short_pay_margin = 4 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  string long_pay_margin = 5 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}

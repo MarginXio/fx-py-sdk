@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.common.msg";
+option java_outer_classname = "HeartBeatProto";
+message HeartBeat {
+
+}

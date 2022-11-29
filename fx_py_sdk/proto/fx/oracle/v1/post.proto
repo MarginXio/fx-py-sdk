@@ -1,0 +1,52 @@
+syntax = "proto3";
+package fx.oracle.v1;
+
+import "gogoproto/gogo.proto";
+
+
+option go_package = "github.com/functionx/fx-dex/x/oracle/types";
+
+message OraclePrice {
+  string id = 1;
+  bytes from = 2 [(gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress"];
+  string pair_id = 3;
+  string price = 4 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  int64 expiry = 5;
+}
+
+message CurrentPrice {
+  string pair_id = 1;
+  string price = 2 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}
+
+message CurrentPrices {
+  repeated CurrentPrice currentPrices = 1 [(gogoproto.nullable) = false];
+}
+
+message Market {
+  string	pair_id = 1;
+  string	base_asset = 2;
+  string	quote_asset = 3;
+  bool	active = 5;
+  int64 price_decimal = 6;
+  int64 position_decimal = 7;
+  string type = 8 [(gogoproto.nullable) = true];
+}
+
+message PostedPrice {
+  string pair_id = 1;
+  string price = 3 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}
+
+message PostedPrices {
+  repeated PostedPrice postedPrices = 1 [(gogoproto.nullable) = false];
+}

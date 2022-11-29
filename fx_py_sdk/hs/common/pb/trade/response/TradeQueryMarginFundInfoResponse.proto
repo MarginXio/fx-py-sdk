@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.response";
+option java_outer_classname = "TradeQueryMarginFundInfoResponseProto";
+message TradeQueryMarginFundInfoResponse {
+	string holdsBalance = 1; //持仓盈亏
+	string assetBalance = 2; //总资产
+	string enableBalance = 3; //可用金额（购买力）
+	string marketValue = 4; //证券市值
+	string cashOnHold = 5; //交易冻结金额
+	string creditValue = 6; //已用额度
+	string creditLine = 7; //信用额度
+	string fetchBalance = 8; //可取金额
+	string frozenBalance = 9; //总冻结金额
+	string accountStatus = 10; //账户状态
+	string spentRatio = 11; //资金使用率
+	
+	// 信用额度数据字段从30开始
+    string currentCreditLimit = 30; // 当前信用额度
+    string maxCreditLimit = 31; // 提升最大信用额度
+    string unitCreditLimit = 32; // 统一信用额度
+    string unitMaxCreditLimit = 33; // 最大统一信用额度
+    
+    // 购买力数据字段从40开始
+    string buyPower = 40; // 购买力 (统一和单一市场对应市场主币种)
+    string buyPowerCredit = 41; // 购买力，提升信用额度后购买力 (统一和单一市场对应市场主币种)
+    string buyPowerHk = 42; // 港股购买力
+    string buyPowerUs = 43; // 美股购买力
+    string buyPowerCn = 44; // 中华通购买力
+    string unitedBuyPowerHk = 45; // 统一港股购买力
+    string unitedBuyPowerUs = 46; // 统一美股购买力
+    string unitedBuyPowerCn = 47; // 统一中华通购买力
+    string thirdBuyPowerHk = 48; // 第三方港股购买力
+    string thirdBuyPowerUs = 49; // 第三方美股购买力
+    string thirdBuyPowerCn = 50; // 第三方中华通购买力
+    string buyPowerShortMarket = 51; // 卖空购买力
+    string buyPowerMoney = 52; // 现金购买力
+}

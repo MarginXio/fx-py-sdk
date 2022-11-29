@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.response";
+option java_outer_classname = "TradeQueryStockShortInfoResponseProto";
+message TradeQueryStockShortInfoResponse {
+    string supportShort = 1; // 是否支持沽空(1-支持、0-不支持)
+	string interestRate = 2; // 沽空利率
+}

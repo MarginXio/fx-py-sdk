@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "trade/vo/FareVo.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.vo";
+option java_outer_classname = "OrderVoProto";
+message OrderVo {
+	string stockCode = 1; //股票代码
+	string stockName = 2; //股票名称
+	string businessPrice = 3; //成交价格
+	string entrustBs = 4; //委托方向 1:买入、2:卖出
+	string entrustPrice = 5; //委托价格
+	string businessBalance = 6; //成交金额
+	string entrustAmount = 7; //委托数量
+	string businessAmount = 8; //成交数量
+	string date = 9; //如果是成交接口，成交日期，如果是委托接口，委托日期
+	string businessTime = 10; //成交时间
+	string entrustTime = 11; //委托时间
+	string queryParamStr = 12; //当前记录的索引，用于分页
+	string statusDesc = 13; //委托状态中文描述
+	string status = 14; //委托状态
+	string entrustId = 15; //委托编号
+	string unBusinessAmount = 16; //未成交数量
+	int32 canBeCanceled = 17; //可撤单 1:可撤单、0:不可撤单
+	string entrustType = 18; //委托类型
+	string opponentSeat = 19; //对手席位号，仅当日成交有该字段
+	string entrustTypeNum = 20; //委托类型对应的数字
+	string remarkType = 21; //备注类型 0:无、1:废单
+	string remark = 22; //备注信息
+	FareVo fareVo = 23; //费用
+	string exchangeType=24; //交易类型
+	int32 canBeUpdated = 25; //是否可改单 1:可改单，0:不可改单
+	string exchange = 26; //交易所
+}

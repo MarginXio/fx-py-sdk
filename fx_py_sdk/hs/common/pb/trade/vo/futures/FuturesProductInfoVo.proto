@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.vo.futures";
+option java_outer_classname = "FuturesProductInfoVoProto";
+message FuturesProductInfoVo {
+    string prodCode = 1; // 产品代码
+    string instCode = 2; // 合约系列类型
+    int32 lotSize = 3; // 每手数量
+    int32 decInPrice = 4; // 产品价格小数位 0表示1，1表示0.1，2表示0.01跟priceDecimalPoint对应
+    string contractSize = 5; // 合约值
+    string priceDecimalPoint = 6; // 价格小数点，跟decInPrice对应]
+    string expiryDate = 7; // 产品到期时间 yyyy-MM-dd
+    int32 isSupportT1 = 8; // 是否支持T+1交易，0：否，1：是
+}

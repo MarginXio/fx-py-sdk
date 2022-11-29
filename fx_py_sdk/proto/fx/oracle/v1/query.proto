@@ -1,0 +1,114 @@
+syntax = "proto3";
+package fx.oracle.v1;
+
+import "google/api/annotations.proto";
+//import "cosmos/base/query/v1beta1/pagination.proto";
+import "fx/oracle/v1/post.proto";
+import "fx/oracle/v1/genesis.proto";
+import "gogoproto/gogo.proto";
+import "cosmos/base/v1beta1/coin.proto";
+
+option go_package = "github.com/functionx/fx-dex/x/oracle/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  rpc GetMarkets(QueryMarketsRequest) returns (QueryMarketsResponse) {
+    option (google.api.http).get = "/oracle/markets";
+  }
+  rpc GetMarket(QueryMarketRequest) returns (QueryMarketResponse) {
+    option (google.api.http).get = "/oracle/market";
+  }
+  rpc GetCurrentPrice(QueryPriceRequest) returns (QueryPriceResponse) {
+    option (google.api.http).get = "/oracle/current_price";
+  }
+  rpc GetCurrentPrices(QueryPricesRequest) returns (QueryPricesResponse) {
+    option (google.api.http).get = "/oracle/current_prices";
+  }
+  rpc GetParams(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/oracle/params";
+  }
+  rpc GetLatestOracleRequest(QueryLatestOracleRequest) returns (BandOracleRequest){}
+
+  rpc GetAggregators(QueryAggregatorsRequest) returns (QueryAggregatorsResponse) {
+    option (google.api.http).get = "/oracle/aggregators";
+  }
+}
+
+message QueryMarketRequest {
+  string pair_id = 1;
+}
+
+message QueryMarketResponse {
+  Market market = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryMarketsRequest {
+
+}
+
+message QueryMarketsResponse {
+  repeated Market markets = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryPriceRequest {
+	string pair_id = 1;
+}
+
+message QueryPriceResponse {
+	CurrentPrice currentPrice = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryPricesRequest {
+	string pair_id = 1;
+}
+
+message QueryPricesResponse {
+	CurrentPrices currentPrices = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryParamsRequest {
+
+}
+
+message QueryParamsResponse {
+    Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryLatestOracleRequest {
+
+}
+
+message BandOracleRequest {
+  // validator address
+  string validator = 1;
+  repeated string symbols = 2;
+  uint64 multiplier = 3;
+  string port = 4;
+  string channel = 5;
+  int64 oracle_script_id = 6;
+  uint64 prepare_gas = 7;
+  uint64 execute_gas = 8;
+  uint64 ask_count = 9;
+  uint64 min_count = 10;
+  cosmos.base.v1beta1.Coin fee_limit = 11 [(gogoproto.nullable) = false];
+  OracleRequestStatus status = 12;
+}
+
+enum OracleRequestStatus {
+  option (gogoproto.goproto_enum_stringer) = true;
+  option (gogoproto.goproto_enum_prefix)   = false;
+
+  SUCCESS = 0 [(gogoproto.enumvalue_customname) = "ORACLE_REQUEST_SUCCESS"];
+  TIMEOUT  = 1 [(gogoproto.enumvalue_customname) = "ORACLE_REQUEST_TIMEOUT"];
+  FAIL  = 2 [(gogoproto.enumvalue_customname) = "ORACLE_REQUEST_FAIL"];
+  PENDING  = 3 [(gogoproto.enumvalue_customname) = "ORACLE_REQUEST_PENDING"];
+}
+
+
+
+message QueryAggregatorsRequest {
+}
+
+message QueryAggregatorsResponse {
+  repeated Aggregator aggregators = 1 [(gogoproto.nullable) = false];
+}

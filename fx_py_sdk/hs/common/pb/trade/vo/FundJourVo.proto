@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.vo";
+option java_outer_classname = "FundJourVoProto";
+message FundJourVo {
+	string businessBalance = 1; //发生金额
+	string type = 2; //类型
+	string typeDesc = 3; //类型描述
+	string fundJourParentType = 4; //资金流水父类型
+	string time = 5; //成交日期，当日资金流水没有，历史资金流水有
+	string queryParamStr = 6; //当前记录的索引，用于分页
+}

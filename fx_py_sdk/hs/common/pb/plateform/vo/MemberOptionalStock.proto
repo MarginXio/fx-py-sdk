@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.plateform.vo";
+option java_outer_classname = "MemberOptionalStockProto";
+message MemberOptionalStock {
+	string securityCode = 1; //股票代码
+	string name = 2; //股票名称
+	string dataType = 3; //股票类型，定义参见数据字典
+	int32 orderNum = 4; //排序
+}

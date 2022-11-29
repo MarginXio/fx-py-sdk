@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.plateform.request";
+option java_outer_classname = "OptStockGroupQueryRequestProto";
+message OptStockGroupQueryRequest {
+    string needStocks = 1; //是否需要自选股 0否 1是
+}

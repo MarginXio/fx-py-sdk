@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request";
+option java_outer_classname = "TradeQueryBuyAmountRequestProto";
+message TradeQueryBuyAmountRequest {
+	string stockCode = 1;
+	string entrustPrice = 2;
+	string exchangeType = 3;
+	int32 clientType = 4;
+}

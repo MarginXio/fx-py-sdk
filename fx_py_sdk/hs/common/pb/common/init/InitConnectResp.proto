@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.common.init";
+option java_outer_classname = "InitConnectRespProto";
+message InitConnectResp {
+	string encryptedKey = 1; //动态加密秘钥
+	int32 heartbeatIntervalSec=2; //建议心跳时间间隔，单位：秒
+}

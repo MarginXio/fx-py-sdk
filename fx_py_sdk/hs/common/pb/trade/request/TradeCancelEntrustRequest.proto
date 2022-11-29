@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request";
+option java_outer_classname = "TradeCancelEntrustRequestProto";
+message TradeCancelEntrustRequest {
+	string exchangeType = 1;
+	string entrustAmount = 2;
+	string entrustPrice = 3;
+	string entrustId = 4;
+	string stockCode = 5;
+	string entrustType = 6; // 委托类型
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "hq/dto/Security.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.hq.common.dto";
+option java_outer_classname = "TimeShareProto";
+message TimeShare {
+	   string time = 1; //时间字符串
+       double price = 2; //当前价
+       double lastClosePrice = 3; //昨收价
+       double avgPrice = 4; //均价
+       int64 volume = 5; //成交量
+       double turnover = 6; //成交额
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "trade/vo/OrderVo.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.response";
+option java_outer_classname = "TradeQueryHistoryEntrustListResponseProto";
+message TradeQueryHistoryEntrustListResponse {
+	repeated OrderVo data = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.plateform.request";
+option java_outer_classname = "OptStockAddRequestProto";
+message OptStockAddRequest {
+	string groupId = 1; //分组id，自定义分组必填，系统分组为空
+	repeated string securityCodeList = 2; //要新增的股票代码列表
+}

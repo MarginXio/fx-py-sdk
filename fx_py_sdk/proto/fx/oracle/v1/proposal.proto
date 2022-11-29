@@ -1,0 +1,28 @@
+syntax = "proto3";
+package fx.oracle.v1;
+
+import "gogoproto/gogo.proto";
+import "fx/oracle/v1/genesis.proto";
+
+
+option go_package = "github.com/functionx/fx-dex/x/oracle/types";
+
+message UpdateOracleProposal {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+  option (gogoproto.goproto_stringer) = false;
+
+  string title = 1;
+  string description = 2;
+  BandOracle band_oracle = 3;
+}
+
+message UpdateAggregatorProposal {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+  option (gogoproto.goproto_stringer) = false;
+
+  string title = 1;
+  string description = 2;
+  Aggregator aggregator = 3;
+}

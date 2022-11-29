@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.hq.common.dto";
+option java_outer_classname = "TickerProto";
+message Ticker {
+	 string time = 1; //时间字符串
+     int32 side = 2; //TickerDirection, 买卖方向 0平1买2卖
+     double price = 3; //价格
+     int64  volume = 4; //成交量
+     double turnover = 5; //成交额
+     int32 type = 6; //TickerType, 逐笔类型
+     int64 timestamp = 7; //时间戳
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request";
+option java_outer_classname = "TradeEntrustRequestProto";
+message TradeEntrustRequest {
+	string stockCode = 1; // 股票代码
+    string exchangeType = 2; // 市场
+    string entrustAmount = 3; // 委托数量
+    string entrustPrice = 4; // 委托价格
+    string entrustBs = 5; // 
+    string entrustType = 6; // 委托类型
+    int32 clientType = 7;
+    string exchange = 8; // 交易所（IB通道）
+    string sessionType = 9; // 盘前盘后交易 0:否 1:是 3:只支持盘中 6美股只支持盘前盘后 7美股支持盘中及盘前盘后
+    string iceBergDisplaySize = 10; // 冰山单披露数量
+
+    string validDays = 11; // 有效天数
+    string condValue = 12; // 条件值
+    string condTrackType = 13; // 跟踪类型 1百分比、2价差、3价格
+}

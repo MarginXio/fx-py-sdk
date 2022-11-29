@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request.futures";
+option java_outer_classname = "FuturesResetPwdRequestProto";
+message FuturesResetPwdRequest {
+	string newPwd = 1;
+}

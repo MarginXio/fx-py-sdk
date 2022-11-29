@@ -1,0 +1,142 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.common.constant";
+option java_outer_classname = "RequestMsgTypeProto";
+enum RequestMsgType {
+	InitConnectRequestMsgType = 0;
+	TrsStockQueryMarginBuyAmountRequestMsgType = 1;
+	TrsStockEntrustRequestMsgType = 2;
+	TrsStockCancelEntrustRequestMsgType = 3;
+	TrsStockQueryRealEntrustListRequestMsgType = 4;
+	TrsStockQueryRealDeliverListRequestMsgType = 5;
+	TrsStockQueryHistoryEntrustListRequestMsgType = 6;
+	TrsStockQueryHistoryDeliverListRequestMsgType = 7;
+	TrsStockQueryBuyAmountRequestMsgType = 8;
+	TrsStockQuerySellAmountRequestMsgType = 9;
+	TrsStockQueryHoldsListRequestMsgType = 10;
+	TrsStockQueryHoldsFundInfoRequestMsgType = 11;
+	TrsStockQueryBasicFundInfoRequestMsgType = 12;
+	TrsStockQueryPageHoldsListRequestMsgType = 13;
+	TradeLoginRequestMsgType = 14;
+	TradeLogoutRequestMsgType = 15;
+	TradeEntrustRequestMsgType = 16;
+	TradeCancelEntrustRequestMsgType = 17;
+	TradeQueryHoldsListRequestMsgType = 18;
+	TradeQueryBuyAmountRequestMsgType = 19;
+	TradeQuerySellAmountRequestMsgType = 20;
+	TradeQueryMarginFundInfoRequestMsgType = 21;
+	TradeQueryRealEntrustListRequestMsgType = 22;
+	TradeQueryHistoryEntrustListRequestMsgType = 23;
+	TradeQueryRealDeliverListRequestMsgType = 24;
+	TradeQueryHistoryDeliverListRequestMsgType = 25;
+	TradeQueryRealFundJourListRequestMsgType = 26;
+	TradeQueryHistoryFundJourListRequestMsgType = 27;
+	TradeSubscribeRequestMsgType = 28;
+	TradeUnsubscribeRequestMsgType = 29;
+	TradeChangeEntrustRequestMsgType = 30;
+	TradeQueryBeforeAndAfterSupportRequestMsgType = 31;
+	
+	/**
+	*业务方法 :期货交易委托
+	*响应类型枚举:FuturesEntrustResponseMsgType
+	*请求实体类型:FuturesEntrustRequest
+	**/
+	FuturesEntrustRequestMsgType = 32;
+
+	/**
+  *业务方法 :查询持仓
+  *响应类型枚举:FuturesQueryHoldsListResponseMsgType
+  *请求实体类型:FuturesQueryHoldsListRequest
+  **/
+	FuturesQueryHoldsListRequestMsgType = 33;
+
+	/**
+  *业务方法 :查询资金信息
+  *响应类型枚举:FuturesQueryFundInfoResponseMsgType
+  *请求实体类型:FuturesQueryFundInfoRequest
+  **/
+	FuturesQueryFundInfoRequestMsgType = 34;
+
+	/**
+  *业务方法 :撤单
+  *响应类型枚举:FuturesCancelEntrustResponseMsgType
+  *请求实体类型:FuturesCancelEntrustRequest
+  **/
+	FuturesCancelEntrustRequestMsgType = 35;
+
+	/**
+  *业务方法 :查询今日委托
+  *响应类型枚举:FuturesQueryRealEntrustListResponseMsgType
+  *请求实体类型:FuturesQueryRealEntrustListRequest
+  **/
+	FuturesQueryRealEntrustListRequestMsgType = 36;
+
+	/**
+  *业务方法 :查询今日成交
+  *响应类型枚举:FuturesQueryRealDeliverListResponseMsgType
+  *请求实体类型:FuturesQueryRealDeliverListRequest
+  **/
+	FuturesQueryRealDeliverListRequestMsgType = 37;
+
+	/**
+  *业务方法 :获取历史成交
+  *响应类型枚举:FuturesQueryHistoryDeliverListResponseMsgType
+  *请求实体类型:FuturesQueryHistoryDeliverListRequest
+  **/
+	FuturesQueryHistoryDeliverListRequestMsgType = 38;
+
+	/**
+  *业务方法 :获取历史委托
+  *响应类型枚举:FuturesQueryHistoryEntrustListResponseMsgType
+  *请求实体类型:FuturesQueryHistoryEntrustListRequest
+  **/
+	FuturesQueryHistoryEntrustListRequestMsgType = 39;
+
+	/**
+  *业务方法 :查询产品信息
+  *响应类型枚举:FuturesQueryProductInfoResponseMsgType
+  *请求实体类型:FuturesQueryProductInfoRequest
+  **/
+	FuturesQueryProductInfoRequestMsgType = 40;
+
+	/**
+	*业务方法 :重置期货交易密码
+	*响应类型枚举:CommonResponseMsgType
+	*请求实体类型:FuturesResetPwdRequest
+	**/
+	FuturesResetPwdRequestMsgType = 41;
+	
+	/**
+	*业务方法 :期货改单
+	*响应类型枚举:FuturesModifyEntrustResponseMsgType
+	*请求实体类型:FuturesModifyEntrustRequest
+	**/
+	FuturesModifyEntrustRequestMsgType = 42;
+
+	/**
+  *业务方法 :查询期货最大可卖/可买
+  *响应类型枚举:FuturesQueryBuySellAmountResponse
+  *请求实体类型:FuturesQueryMaxBuySellAmountRequest
+  **/
+	FuturesQueryMaxBuySellAmountRequestMsgType = 43;
+	
+	TradeQueryMaxAvailableAssetRequestMsgType = 44; // 查询最大可用资产
+	TradeQueryStockShortInfoRequestMsgType = 45; // 查询股票沽空信息
+	
+	TradeQueryRealCondOrderListRequestMsgType = 46; // 查询当日条件单列表
+	TradeQueryHistoryCondOrderListRequestMsgType = 47; // 查询历史条件单列表
+	
+	//特殊消息，保持交易登录态
+	TradeKeepLoginRequestMsgType = 1000;
+
+	//行情占用2000开头
+	HQSubscribeRequestMsgType = 20001;
+    HQUnsubscribeRequestMsgType = 20002;
+    HQBasicQotRequestMsgType = 20003;
+    HQBrokerRequestMsgType = 20004;
+    HQOrderBookRequestMsgType = 20005;
+    HQTickerRequestMsgType = 20006;
+    HQKLRequestMsgType = 20007;
+    HQTimeShareRequestMsgType = 20008;
+
+}

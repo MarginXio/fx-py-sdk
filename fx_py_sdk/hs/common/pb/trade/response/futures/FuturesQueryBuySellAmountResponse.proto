@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.response.futures";
+option java_outer_classname = "FuturesQueryBuySellAmountResponseProto";
+message FuturesQueryBuySellAmountResponse {
+	int32 positionStatus = 1;  //持仓头寸状态：0未建仓，1正仓，2负仓
+	int64 maxBuyAmount = 2; 	//最大可买
+	int64 maxSellAmount = 3;  //最大可卖
+	string initialMargin = 4; // 开仓按金
+	string ccy = 5; // 币种
+}

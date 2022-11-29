@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.hq.common.dto";
+option java_outer_classname = "FutureBasicQotExDataProto";
+message FutureBasicQotExData {
+    string expiryDate=1; // 到期日字符串
+    int32 expiryDateDistance = 2; //距离到期日天数
+}

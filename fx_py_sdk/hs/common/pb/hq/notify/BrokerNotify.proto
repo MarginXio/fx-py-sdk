@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "hq/dto/Security.proto";
+import "hq/dto/Broker.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.hq.notify";
+option java_outer_classname = "BrokerNotifyProto";
+message BrokerNotify {
+    Security security = 1;
+    int32 side = 2; // 0买1卖
+    repeated Broker brokerList = 3;
+}

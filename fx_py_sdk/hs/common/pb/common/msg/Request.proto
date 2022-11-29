@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "common/constant/RequestMsgType.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.common.msg";
+option java_outer_classname = "RequestProto";
+message PBRequest {
+	RequestMsgType requestMsgType = 1;
+	string requestId = 2;
+	int64 requestTime = 3;
+	google.protobuf.Any payload = 4;
+	string token = 5;
+}

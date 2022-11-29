@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fx.oracle.v1;
+
+option go_package = "github.com/functionx/fx-dex/x/oracle/types";
+
+message OraclePacketData {
+    oneof packet {
+        NoData noData = 1;
+        // this line is used by starport scaffolding # ibc/packet/proto/field
+    }
+}
+
+message NoData {
+}
+
+// this line is used by starport scaffolding # ibc/packet/proto/message

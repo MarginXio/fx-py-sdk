@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.common.init";
+option java_outer_classname = "InitConnectReqProto";
+message InitConnectReq {
+	string deviceNo=1;
+}

@@ -1,0 +1,39 @@
+syntax = "proto3";
+package fx.oracle.v1;
+import "gogoproto/gogo.proto";
+import "cosmos/base/v1beta1/coin.proto";
+
+option go_package = "github.com/functionx/fx-dex/x/oracle/types";
+
+// Msg defines the Msg service.
+service Msg {
+  rpc OracleRequest(MsgOracleRequest) returns (MsgOracleResponse);
+  rpc SubmitAnswer(MsgSubmitAnswer) returns (MsgSubmitResponse);
+}
+
+message MsgOracleRequest {
+  // validator address
+  string validator = 1;
+  uint64 prepare_gas = 2;
+  uint64 execute_gas = 3;
+  cosmos.base.v1beta1.Coin fee_limit = 4 [(gogoproto.nullable) = false];
+  string market_type = 5 [(gogoproto.nullable) = true];
+}
+
+message MsgOracleResponse {
+
+}
+
+message MsgSubmitAnswer {
+  string symbol = 1;
+  string oracle = 2;
+  string answer = 3 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}
+
+message MsgSubmitResponse {
+
+}
+

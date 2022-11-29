@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request";
+option java_outer_classname = "TradeQueryHoldsListRequestProto";
+message TradeQueryHoldsListRequest {
+	string exchangeType = 1;
+}

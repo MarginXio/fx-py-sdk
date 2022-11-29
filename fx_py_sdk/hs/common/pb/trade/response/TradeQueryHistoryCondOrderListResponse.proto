@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "trade/vo/CondOrderVo.proto";
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.response";
+option java_outer_classname = "TradeQueryHistoryCondOrderListResponseProto";
+message TradeQueryHistoryCondOrderListResponse {
+	repeated CondOrderVo data = 1;
+	int32 curPageNo= 2;
+    int32 curPageSize = 3;
+    int64 totalPages = 4;
+}

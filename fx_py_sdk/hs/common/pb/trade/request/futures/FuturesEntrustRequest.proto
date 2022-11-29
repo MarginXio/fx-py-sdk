@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request.futures";
+option java_outer_classname = "FuturesEntrustRequestProto";
+message FuturesEntrustRequest {
+	string stockCode = 1;
+	string entrustType = 2; // 0 限价单、1 竞价单、2 市价单、3 条件单
+	string entrustPrice = 3;
+	string entrustAmount = 4;
+	string entrustBs = 5; // 1:买入,2:卖出
+	string validTimeType = 6; // 0 即日有效、1 成交并取消、2 全额或取消、3 到期日有效、4 指定日期有效
+	string validTime = 7; // 当validTimeType==4 必填yyyyMMdd
+	string orderOptions =8; //0:默认 1:T+1
+}

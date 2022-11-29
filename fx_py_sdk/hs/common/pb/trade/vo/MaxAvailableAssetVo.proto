@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.vo";
+option java_outer_classname = "MaxAvailableAssetVoProto";
+message MaxAvailableAssetVo {
+    string positionStatus = 1; // 持仓头寸状态：0未建仓，1做多，2做空
+    string position = 2; // 持仓头寸
+    
+    string longOpenAvailable = 3; // 做多数据：做多可开仓(买入)数量
+    string longCloseAvailable = 4; // 做多数据：做多可平仓(卖出)数量
+    string cashAvailableToOpen = 5; // 做多数据：现金可开仓数量
+    string marginAvailableToOpen = 6; // 做多数据：融资可开仓数量
+    string cashAndMarginAvailableToOpen = 7; // 做多数据：现金和融资可开仓数量
+    string cashAvailableAmount = 8; // 做多数据：现金购买力
+    string marginAvailableAmount = 9; // 做多数据：融资购买力
+    string cashAndMarginAvailableAmount = 10; // 做多数据：现金和融资总共的购买力
+    
+    string shortOpenAvailable = 11; // 做空数据：做空可开仓(卖出)数量
+    string shortCloseAvailable = 12; // 做空数据：做空可平仓(买入)数量
+    string shortCloseCashAvailable = 13; // 做空数据：做空现金可平仓(买入)数量
+    string shortOpenPool = 14; // 做空数据：卖空池
+    string shortBuyPower = 15; // 做空数据：做空购买力
+    
+    string contractSize = 16; // 期权合约单位
+    string unitedBuyPowerStatus = 17; // 开通统一购买力
+    string creditLimit = 18; // 透支额度
+}

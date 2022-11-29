@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "plateform/vo/MemberOptionalStock.proto";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.plateform.vo";
+option java_outer_classname = "MemberOptStockGroupProto";
+message MemberOptStockGroup {
+    string id = 1;
+    string groupName = 2; //名字
+    string groupFtName = 3; //繁体
+    string isSystem = 4; //是否为系统分组，0否 1是
+    int32 orderNum = 5; //排序序号
+    int32 stockNum = 6; // 自选股数量
+    repeated MemberOptionalStock optionStocks = 7;
+}

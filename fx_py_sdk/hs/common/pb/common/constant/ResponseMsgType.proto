@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.common.constant";
+option java_outer_classname = "ResponseMsgTypeProto";
+enum ResponseMsgType {
+	InitConnectResponseMsgType = 0;
+	CommonResponseMsgType = 1;
+	CommonIntResponseMsgType = 2;
+	CommonStringResponseMsgType = 3;
+	CommonBoolResponseMsgType = 4;
+	TrsStockQueryMarginBuyAmountResponseMsgType = 5;
+	TrsStockQueryRealEntrustListResponseMsgType = 6;
+	TrsStockQueryRealDeliverListResponseMsgType = 7;
+	TrsStockQueryHistoryEntrustListResponseMsgType = 8;
+	TrsStockQueryHistoryDeliverListResponseMsgType = 9;
+	TrsStockQueryHoldsListResponseMsgType = 10;
+	TrsStockQueryHoldsFundInfoResponseMsgType = 11;
+	TrsStockQueryBasicFundInfoResponseMsgType = 12;
+	TrsStockQueryPageHoldsListResponseMsgType = 13;
+	TradeLoginResponseMsgType = 14;
+	TradeLogoutResponseMsgType = 15;
+	TradeEntrustResponseMsgType = 16;
+	TradeCancelEntrustResponseMsgType = 17;
+	TradeQueryHoldsListResponseMsgType = 18;
+	TradeQueryBuyAmountResponseMsgType = 19;
+	TradeQuerySellAmountResponseMsgType = 20;
+	TradeQueryMarginFundInfoResponseMsgType = 21;
+	TradeQueryRealEntrustListResponseMsgType = 22;
+	TradeQueryHistoryEntrustListResponseMsgType = 23;
+	TradeQueryRealDeliverListResponseMsgType = 24;
+	TradeQueryHistoryDeliverListResponseMsgType = 25;
+	TradeQueryRealFundJourListResponseMsgType = 26;
+	TradeQueryHistoryFundJourListResponseMsgType = 27;
+	TradeSubscribeResponseMsgType = 28;
+	TradeUnsubscribeResponseMsgType = 29;
+	TradeChangeEntrustResponseMsgType = 30;
+	TradeQueryBeforeAndAfterSupportResponseMsgType = 31;
+
+	// 期货
+	FuturesQueryHoldsListResponseMsgType = 32;
+	FuturesQueryFundInfoResponseMsgType = 33;
+	FuturesQueryRealEntrustListResponseMsgType = 34;
+	FuturesQueryRealDeliverListResponseMsgType = 35;
+	FuturesQueryHistoryDeliverListResponseMsgType = 36;
+	FuturesQueryHistoryEntrustListResponseMsgType = 37;
+	FuturesQueryProductInfoResponseMsgType = 38;
+	FuturesQueryBuySellAmountResponseMsgType = 39;
+	FuturesCancelEntrustResponseMsgType = 40;
+	FuturesModifyEntrustResponseMsgType = 41;
+	FuturesEntrustResponseMsgType = 42;
+
+	TradeQueryMaxAvailableAssetResponseMsgType = 44; // 查询最大可用资产
+	TradeQueryStockShortInfoResponseMsgType = 46; // 查询股票沽空信息
+	
+	TradeQueryRealCondOrderListResponseMsgType = 47; // 查询当日条件单
+    TradeQueryHistoryCondOrderListResponseMsgType = 48; // 查询历史条件单
+
+	ErrorResponseMsgType = 999;
+	
+	//特殊消息，保持交易登录态
+	TradeKeepLoginResponseMsgType = 1000;
+
+    //行情占用2000开头
+    HQSubscribeResponseMsgType = 20001;
+    HQUnsubscribeResponseMsgType = 20002;
+    HQBasicQotResponseMsgType = 20003;
+    HQBrokerResponseMsgType = 20004;
+    HQOrderBookResponseMsgType = 20005;
+    HQTickerResponseMsgType = 20006;
+    HQKLResponseMsgType = 20007;
+    HQTimeShareResponseMsgType = 20008;
+    
+}
+

@@ -1,0 +1,19 @@
+syntax = "proto3";
+package fx.ibc.applications.transfer.v1;
+
+option go_package = "github.com/functionx/fx-dex/x/ibc/applications/transfer/types";
+
+import "gogoproto/gogo.proto";
+import "fx/ibc/applications/transfer/v1/transfer.proto";
+
+
+message UpdateDenomTraces {
+  option (gogoproto.equal) = false;
+  option (gogoproto.goproto_getters) = false;
+  option (gogoproto.goproto_stringer) = false;
+
+  string title = 1;
+  string description = 2;
+  repeated DenomTrace denom_traces = 3 [(gogoproto.castrepeated) = "Traces", (gogoproto.nullable) = false, (gogoproto.moretags) = "yaml:\"denom_traces\""];
+  repeated string denom_keys = 4;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request";
+option java_outer_classname = "TradeChangeEntrustRequestProto";
+message TradeChangeEntrustRequest {
+	string exchangeType = 1;
+	string entrustAmount = 2;
+	string entrustPrice = 3;
+	string entrustId = 4;
+	string stockCode = 5;
+	
+	string entrustType = 6; // 委托类型
+	string sessionType = 7; // 盘前盘后交易 3:只支持盘中 6美股只支持盘前盘后 7美股支持盘中及盘前盘后
+    string validDays = 8; // 有效天数
+    string condValue = 9; // 条件值
+    string condTrackType = 10; // 跟踪类型 1百分比、2价差、3价格
+}

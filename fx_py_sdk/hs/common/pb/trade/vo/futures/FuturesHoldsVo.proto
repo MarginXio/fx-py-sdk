@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.vo.futures";
+option java_outer_classname = "FuturesHoldsVoProto";
+message FuturesHoldsVo {
+	string stockName = 1;//股票名称
+	string stockCode = 2;//股票代码，1.港股有后缀 .HK
+	string lastDayQty = 3; // 上日持仓数量
+	string lastDayPrice =4; // 上日持仓成本
+	string depQty = 5; // 存储仓位
+	string dayLongQty = 6; // 今日长仓数量
+	string dayLongPrice = 7; // 今日长仓均价
+	string dayShortQty = 8; // 今日短仓数量
+	string dayShortPrice = 9; // 今日短仓均价
+	string dayNetQty = 10; //  今日净仓数量
+	string dayNetPrice = 11; //  今日净仓均价
+	string currentQty = 12;//持仓 上日持仓数量 ＋ 今日净仓数量 ＝ 净仓数量
+	string costPrice = 13; // 成本价
+	string lastPrice = 14; // 现价
+	string preClosePrice = 15; // 昨收价
+	string profitLoss = 16; // 盈亏
+	string ccyRate = 17;	// 参考兑换率
+	string contractValue = 18; // 合约值
+	string profitLossBaseCcy = 19; // 盈亏(基本货币)
+	string ccy = 20; //产品系列的交易币种
+	string dataType = 21; // 仅仅期货是返回dataType，因为港期和美期
+	string closeProfit = 22; // 已实现盈亏
+	string closeProfitHKD = 23; // 已实现盈亏(HKD)
+}

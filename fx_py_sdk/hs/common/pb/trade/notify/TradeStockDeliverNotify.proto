@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.notify";
+option java_outer_classname = "TradeStockDeliverNotifyProto";
+message TradeStockDeliverNotify {
+	string fundAccount = 1;			//资金账号
+	string stockCode = 2;			//股票代码
+	string stockName = 3;			//股票名称
+	string entrustBs = 4;			//委托方向
+	string businessPrice = 5;		//成交价格
+	string businessAmount = 6;		//成交数量
+	string businessDate = 7;		//成交日期
+	string businessTime = 8;		//成交时间
+	string exchangeType = 9;		//交易类型
+	string entrustStatus = 10;		//委托状态
+	string clientId = 11;			//客户号
+	string entrustNo=12;			//委托编号
+	string sumBusinessAmount = 13;	//总数量
+	string sumBusinessBalance=14;	//总金额
+	string originalAmount=15;		//原始委托数量
+	string originalPrice = 16;		//原始委托价格
+	string leftAmount=17;			//剩余挂单数量
+	string entrustPrice=18;			//改后委托价格
+	string entrustAmount=19;		//改后委托数量
+	string recordNo=20;				//委托库记录号
+}

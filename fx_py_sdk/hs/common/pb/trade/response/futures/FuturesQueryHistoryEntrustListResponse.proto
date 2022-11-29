@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "trade/vo/futures/FuturesOrderVo.proto";
+option
+java_package = "com.huasheng.quant.open.sdk.protobuf.trade.response.futures";
+option java_outer_classname = "FuturesQueryHistoryEntrustListResponseProto";
+message FuturesQueryHistoryEntrustListResponse {
+	repeated FuturesOrderVo data = 1;
+	int32 curPageNo = 2; // 当前页
+	int32 curPageSize = 3; // 当前页大小
+	int32 totalPageNo = 4; // 最大页【作废】
+	int32 lastPage = 5; //是否最后一页，0：否，1：是
+}

@@ -1,0 +1,35 @@
+version: "3.7"
+
+x-common-variables: &common-variables
+  # Toggles between different endpoint URLs
+  NETWORK: testnet                    # "local", "devnet", "testnet" or "mainnet"
+
+  # Database
+  database: fxdex
+  user: postgres
+  password:
+  host: db
+  port: 5432
+
+  # RPC parameters
+  RPC_PAGE_SIZE: 5                    # number of blocks to get in each multithread call
+  RPC_MAX_RETRIES: 999                # number of times to retry before backing off
+  START_BLOCK: 1                      # block to start tracking from
+  POSITIONING_UPDATE_INTERVAL: 100    # block interval to update (unrealized) P&Ls
+
+  # For notifying user (in event of database/WS error)
+  GMAIL_APP_EMAIL:
+  GMAIL_APP_PASSWORD:
+
+services:
+  base-listener:
+    build: .
+    image: fxdex/fx_ws:latest
+    platform: linux/amd64
+    environment:
+      <<: *common-variables
+    logging:
+      options:
+        max-size: "128m"
+    networks:
+      - default

@@ -1,0 +1,25 @@
+syntax = "proto3";
+package fx.dex.v1;
+
+import "gogoproto/gogo.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/marginxio/marginx/x/dex/types";
+
+
+message OrderA {
+  string tx_hash = 1;
+  string id = 2 ;
+  string pair_id = 3;
+  google.protobuf.Timestamp created_at = 4 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
+  string price = 5 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}
+
+message OrderB {
+  string tx_hash = 1;
+  string id = 2 ;
+  string pair_id = 3;
+}

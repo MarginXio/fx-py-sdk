@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+
+  listener:
+    build: .
+    environment:
+      - NETWORK=devnet
+      - database=fxdex
+      - user=postgres
+      - password=123456
+      - host=db
+      - port=5432
+      - START_BLOCK=1
+
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=fxdex
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_PORT=5432

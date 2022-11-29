@@ -1,0 +1,42 @@
+syntax = "proto3";
+package fx.dex.v1;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/marginxio/marginx/x/dex/types";
+
+//cumulative funding rates
+//keys: pairID + leverage --> NominalPosition + MantMarginRate
+message MarginRate {
+  string pair_id = 1;
+  uint64 leverage = 2;
+  repeated string nominal_position = 3 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  repeated string maint_margin_rate = 4 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+  repeated string maint_amount = 5 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}
+
+// init margin rate table
+message InitMarginRate {
+  string pair_id = 1;
+  uint64 max_leverage = 2;
+  repeated string nominal_position = 3 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+
+  repeated uint32 Leverage = 4;
+
+  repeated string Rate = 5 [
+    (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec",
+    (gogoproto.nullable) = false
+  ];
+}

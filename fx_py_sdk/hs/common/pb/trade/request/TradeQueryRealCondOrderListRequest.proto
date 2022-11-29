@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.trade.request";
+option java_outer_classname = "TradeQueryRealCondOrderListRequestProto";
+message TradeQueryRealCondOrderListRequest {
+	string exchangeType = 1;
+	string stockCode = 2; 
+	int32 pageNo = 3;
+	int32 pageSize = 4;
+}

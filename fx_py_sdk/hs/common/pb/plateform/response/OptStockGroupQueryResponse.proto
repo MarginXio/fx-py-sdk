@@ -1,0 +1,8 @@
+syntax = "proto3";
+import "plateform/vo/MemberOptStockGroup.proto";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.plateform.response";
+option java_outer_classname = "OptStockGroupQueryResponseProto";
+message OptStockGroupQueryResponse {
+    repeated MemberOptStockGroup group = 1;
+}

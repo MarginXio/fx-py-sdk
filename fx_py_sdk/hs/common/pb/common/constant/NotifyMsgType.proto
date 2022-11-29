@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "com.huasheng.quant.open.sdk.protobuf.common.constant";
+option java_outer_classname = "NotifyMsgTypeProto";
+enum NotifyMsgType {
+	TrsStockDeliverMsgType = 0;
+	TradeStockDeliverMsgType = 1;
+	FuturesTradeStockDeliverMsgType = 2;
+
+    //行情占用2000开头
+    OrderBookNotifyMsgType=20001;
+    BrokerQueueNotifyMsgType=20002;
+    BasicQotNotifyMsgType=20003;
+    TickerNotifyMsgType=20004;
+}

@@ -1,0 +1,65 @@
+version: "3.7"
+
+# This file allows you to maintain a copy of database
+# Multichain infrastructure requires multiple WS instances
+services:
+  btc-listener:
+    extends:
+      file: docker-compose-base.yml
+      service: base-listener
+    environment:
+      PAIR_ID: BTC:USDT
+      INIT_DB: 1
+
+      # Endpoint URLs to DEX
+      TESTNET_RPC_URL:
+      TESTNET_GRPC_URL:
+      TESTNET_WS_URL:
+
+    networks:
+      - default_network
+
+  spy-listener:
+    extends:
+      file: docker-compose-base.yml
+      service: base-listener
+    environment:
+      PAIR_ID: SPY:USDT
+
+      # Endpoint URLs to DEX
+      TESTNET_RPC_URL:
+      TESTNET_GRPC_URL:
+      TESTNET_WS_URL:
+
+    networks:
+      - default_network
+
+  db:
+    image: postgres:latest
+    restart: always
+    container_name: db
+    shm_size: 512m  # https://stackoverflow.com/questions/56751565/pq-could-not-resize-shared-memory-segment-no-space-left-on-device
+    command: postgres -c 'max_connections=1000'
+    ports:
+      - "5432:5432"
+    logging:
+      options:
+        max-size: "512m"
+    environment:
+      # Database credentials should be same as above
+      - POSTGRES_DB=fxdex
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=
+      - POSTGRES_PORT=5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - default_network
+
+volumes:
+  postgres-data:
+
+networks:
+  default_network:
+    name: default_network
+    driver: bridge
