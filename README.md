@@ -42,8 +42,6 @@ pip install -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple
  python setup.py install
 ```
 
-<s>
-
 ### 5.使用GRPC (Using GRPC)
 
 ```python
