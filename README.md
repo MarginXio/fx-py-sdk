@@ -129,7 +129,7 @@ sql.create_table()
 **启动websocket和rpc同时同步区块 (Websocket and RPC to update simultaneously)** 
 >websocket从连接到区块链时的区块开始同步，rpc从数据库断点开始同步直到连接时的区块 (Websocket syncs from the latest block, RPC syncs from database last block to current block)
 
-默认连接本地sql host和port，可以通过环境变量设置 (default environment settings)
+默认连接本地sql host和port，可以通过环境变量设置 (default connection to sql host and port can be configured via environment variables)
 ```shell
 export NETWORK=devnet
 export database=postgres
